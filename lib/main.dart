@@ -18,10 +18,10 @@ final theme = ThemeData(
       color: colorScheme.secondary,
     ),
     titleLarge: TextStyle(
-      color: colorScheme.primary,
+      color: colorScheme.tertiary,
       fontSize: 20,
       fontWeight: FontWeight.bold,
-    ), 
+    ),
   ),
 );
 void main() {
