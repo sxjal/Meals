@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meals/widgets/grid_data.dart';
+import 'package:meals/data/data.dart';
 
 class CategoriesClass extends StatelessWidget {
   const CategoriesClass({super.key});
@@ -10,9 +11,9 @@ class CategoriesClass extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Hi there!"),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(20),
-        child: GridData(),
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: GridData(category: avaialbleCategories[0]),
       ),
     );
   }
