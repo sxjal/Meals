@@ -9,25 +9,30 @@ class CategoriesClass extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Hi there!"),
       ),
-      body: GridView(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: 19 / 6,
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: GridView(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 3 / 2,
+            crossAxisSpacing: 20,
+            mainAxisSpacing: 20,
+          ),
+          children: [
+            Text(
+              "sajal",
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            Text(
+              "something",
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            Text(
+              "something",
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+          ],
         ),
-        children: [
-          Text(
-            "sajal",
-            style: Theme.of(context).textTheme.bodyMedium,
-          ),
-          Text(
-            "something",
-            style: Theme.of(context).textTheme.bodyMedium,
-          ),
-          Text(
-            "something",
-            style: Theme.of(context).textTheme.bodySmall,
-          ),
-        ],
       ),
     );
   }
