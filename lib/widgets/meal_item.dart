@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meals/modal/meal.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class MealItem extends StatelessWidget {
   const MealItem({super.key, required this.meal});
@@ -11,7 +12,14 @@ class MealItem extends StatelessWidget {
       child: InkWell(
         autofocus: true,
         onTap: () {},
-        child: Text(meal.title),
+        child: Stack(
+          children: [
+            FadeInImage(
+              placeholder: MemoryImage(kTransparentImage),
+              image: NetworkImage(meal.imageUrl),
+            ),
+          ],
+        ),
       ),
     );
   }
