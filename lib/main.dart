@@ -20,7 +20,16 @@ class App extends StatelessWidget {
   Widget build(context) {
     return MaterialApp(
       theme: theme,
-      home: const Text("Hello, world!"),
+      home: const Scaffold(
+        body: Center(
+          child: Text(
+            "Hello, world!",
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
