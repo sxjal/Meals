@@ -7,11 +7,16 @@ import 'package:meals/modal/category.dart';
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
 
-  void _selectCategory(BuildContext context) {
+  void _selectCategory(BuildContext context, Category category) {
+    final filteredMeals = dummyMeals.where((meal) {
+      return meal.categories.contains(category.id);
+    }).toList();
+
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (ctx) => const MealScreen(title: "title", meals: dummyMeals),
+        builder: (ctx) =>
+            MealScreen(title: category.title, meals: filteredMeals),
       ),
     );
     //Navigator.of(context).push(route);
@@ -45,7 +50,7 @@ class CategoriesScreen extends StatelessWidget {
               GridData(
                 category: category,
                 onSelectCategory: () {
-                  _selectCategory(context);
+                  _selectCategory(context, category);
                 },
               ),
           ],

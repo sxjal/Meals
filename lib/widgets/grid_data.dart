@@ -11,7 +11,7 @@ class GridData extends StatelessWidget {
   Widget build(context) {
     return InkWell(
       onTap: () {
-        onSelectCategory;
+        onSelectCategory();
       },
       splashColor: Theme.of(context).colorScheme.surface,
       borderRadius: BorderRadius.circular(10),
