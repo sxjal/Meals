@@ -10,39 +10,21 @@ class GridData extends StatelessWidget {
   @override
   Widget build(context) {
     return Container(
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            //category.color.withOpacity(0.7),
-            Theme.of(context).colorScheme.primary.withOpacity(0.7),
-            category.color,
+            category.color.withOpacity(0.55),
+            category.color.withOpacity(0.9),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         borderRadius: BorderRadius.circular(15),
       ),
-      child: GridView(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: 3 / 2,
-          crossAxisSpacing: 20,
-          mainAxisSpacing: 20,
-        ),
-        children: [
-          Text(
-            "sajal",
-            style: Theme.of(context).textTheme.bodyMedium,
-          ),
-          Text(
-            "something",
-            style: Theme.of(context).textTheme.bodyMedium,
-          ),
-          Text(
-            "something",
-            style: Theme.of(context).textTheme.bodySmall,
-          ),
-        ],
+      child: Text(
+        category.title,
+        style: Theme.of(context).textTheme.titleLarge,
       ),
     );
   }

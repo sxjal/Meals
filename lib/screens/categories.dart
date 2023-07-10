@@ -13,7 +13,28 @@ class CategoriesClass extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
-        child: GridData(category: avaialbleCategories[0]),
+        child: GridView(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 3 / 2,
+            crossAxisSpacing: 20,
+            mainAxisSpacing: 20,
+          ),
+          children: [
+            Text(
+              "sajal",
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            Text(
+              "something",
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            Text(
+              "something",
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+          ],
+        ),
       ),
     );
   }

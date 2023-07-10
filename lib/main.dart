@@ -17,6 +17,11 @@ final theme = ThemeData(
     bodySmall: TextStyle(
       color: colorScheme.secondary,
     ),
+    titleLarge: TextStyle(
+      color: colorScheme.primary,
+      fontSize: 20,
+      fontWeight: FontWeight.bold,
+    ), 
   ),
 );
 void main() {
