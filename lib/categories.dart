@@ -12,11 +12,21 @@ class CategoriesClass extends StatelessWidget {
       body: GridView(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 1 / 5,
+          childAspectRatio: 19 / 6,
         ),
-        children: const [
-          Text("sajal"),
-          Text("something"),
+        children: [
+          Text(
+            "sajal",
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
+          Text(
+            "something",
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
+          Text(
+            "something",
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
         ],
       ),
     );

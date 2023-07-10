@@ -2,14 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:meals/categories.dart';
 
+final colorScheme = ColorScheme.fromSeed(
+  brightness: Brightness.dark,
+  seedColor: Colors.blueGrey,
+);
+
 final theme = ThemeData(
   useMaterial3: true,
-  colorScheme: ColorScheme.fromSeed(
-    brightness: Brightness.dark,
-    seedColor: Colors.blueGrey,
-  
+  colorScheme: colorScheme,
+  textTheme: GoogleFonts.latoTextTheme().copyWith(
+    bodyMedium: TextStyle(
+      color: colorScheme.primary,
+    ),
+    bodySmall: TextStyle(
+      color: colorScheme.secondary,
+    ),
   ),
-  textTheme: GoogleFonts.latoTextTheme(),
 );
 void main() {
   runApp(const App());
