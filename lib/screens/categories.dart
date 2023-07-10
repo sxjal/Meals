@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:meals/screens/mealscreen.dart';
 import 'package:meals/widgets/grid_data.dart';
 import 'package:meals/data/data.dart';
+import 'package:meals/modal/category.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
 
-  void selectCategory(
-    BuildContext context,
-  ) {
+  void _selectCategory(BuildContext context) {
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -34,11 +33,21 @@ class CategoriesScreen extends StatelessWidget {
             mainAxisSpacing: 20,
           ),
           children: [
-            ...avaialbleCategories.map((category) {
-              return GridData(category: category, selectCategory: selectCategory);
-            }).toList(),
-            // for (final category in avaialbleCategories)
-            //   GridData(category: category),
+            // ...avaialbleCategories.map((category) {
+            //   return GridData(
+            //     category: category,
+            //     selectCategory: () {
+            //       selectCategory(context);
+            //     },
+            //   );
+            // }).toList(),
+            for (final category in avaialbleCategories)
+              GridData(
+                category: category,
+                onSelectCategory: () {
+                  _selectCategory(context);
+                },
+              ),
           ],
         ),
       ),

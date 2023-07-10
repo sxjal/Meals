@@ -3,15 +3,15 @@ import 'package:meals/modal/category.dart';
 
 class GridData extends StatelessWidget {
   const GridData(
-      {super.key, required this.category, required this.selectCategory});
+      {super.key, required this.category, required this.onSelectCategory});
   final Category category;
-  final void Function(BuildContext) selectCategory;
+  final void Function() onSelectCategory;
 
   @override
   Widget build(context) {
     return InkWell(
       onTap: () {
-        selectCategory(context);
+        onSelectCategory;
       },
       splashColor: Theme.of(context).colorScheme.surface,
       borderRadius: BorderRadius.circular(10),
