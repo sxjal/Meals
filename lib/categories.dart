@@ -10,11 +10,14 @@ class CategoriesClass extends StatelessWidget {
         title: const Text("Hi there!"),
       ),
       body: GridView(
-        children: [],
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 1 /  5,
+          childAspectRatio: 1 / 5,
         ),
+        children: const [
+          Text("sajal"),
+          Text("something"),
+        ],
       ),
     );
   }

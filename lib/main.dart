@@ -7,6 +7,7 @@ final theme = ThemeData(
   colorScheme: ColorScheme.fromSeed(
     brightness: Brightness.dark,
     seedColor: Colors.blueGrey,
+  
   ),
   textTheme: GoogleFonts.latoTextTheme(),
 );
