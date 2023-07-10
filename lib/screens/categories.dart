@@ -2,8 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:meals/widgets/grid_data.dart';
 import 'package:meals/data/data.dart';
 
-class CategoriesClass extends StatelessWidget {
-  const CategoriesClass({super.key});
+class CategoriesScreen extends StatelessWidget {
+  const CategoriesScreen({super.key});
+
+  void _selectCategory(
+    BuildContext context,
+  ) {
+    Navigator.push(
+      context,
+    );
+    //Navigator.of(context).push(route);
+  }
 
   @override
   Widget build(context) {
