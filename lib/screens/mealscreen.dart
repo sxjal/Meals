@@ -13,21 +13,26 @@ class MealScreen extends StatelessWidget {
 
   @override
   Widget build(context) {
+    Widget screen;
+    if (meals.isEmpty) {
+      screen = const Center(
+        child: Text("No meals found!"),
+      );
+    } else {
+      screen = ListView.builder(
+        itemBuilder: (ctx, index) => Text(
+          meals[index].title,
+        ),
+        itemCount: meals.length,
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
       ),
       body: Center(
-        child: ListView(children: [
-          ...meals.map((meal) {
-            return ListTile(
-              title: Text(meal.title),
-              leading: CircleAvatar(
-                backgroundImage: NetworkImage(meal.imageUrl),
-              ),
-            );
-          }).toList(),
-        ]),
+        child: screen,
       ),
     );
   }
