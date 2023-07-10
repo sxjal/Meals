@@ -21,18 +21,11 @@ class CategoriesClass extends StatelessWidget {
             mainAxisSpacing: 20,
           ),
           children: [
-            Text(
-              "sajal",
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-            Text(
-              "something",
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-            Text(
-              "something",
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
+            ...avaialbleCategories.map((category) {
+              return GridData(category: category);
+            }).toList(),
+            // for (final category in avaialbleCategories)
+            //   GridData(category: category),
           ],
         ),
       ),
