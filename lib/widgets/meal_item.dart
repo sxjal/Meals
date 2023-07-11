@@ -67,6 +67,11 @@ class MealItem extends StatelessWidget {
                       children: [
                         Trait(
                           icon: Icons.schedule,
+                          text: '${meal.duration} min',
+                        ),
+                        const Spacer(),
+                        Trait(
+                          icon: Icons.work,
                           text: '$complexitytext min',
                         ),
                         const Spacer(),
