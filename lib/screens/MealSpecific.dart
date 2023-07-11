@@ -7,8 +7,38 @@ class MealSpecific extends StatelessWidget {
   final Meal meal;
   @override
   Widget build(context) {
-    return const Column(
-      children: [],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Receipe"),
+      ),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+            child: Container(
+              height: 400,
+              child: Card(
+                //padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+                //decoration: BoxDecoration(
+                //borderRadius: BorderRadius.circular(20),
+                //),
+                //width: double.infinity,
+                //height: 400,
+                elevation: 20,
+                
+                child: Image.network(
+                  meal.imageUrl,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ),
+          Text(
+            meal.title,
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
+        ],
+      ),
     );
   }
 }
