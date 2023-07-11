@@ -22,7 +22,7 @@ class MealSpecific extends StatelessWidget {
               decoration: const BoxDecoration(
                   //color: Color.fromARGB(182, 67, 96, 100),
                   ),
-              child: Stack(
+              child: Column(
                 //fit: StackFit.expand,
 
                 //clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -38,121 +38,58 @@ class MealSpecific extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Positioned(
-                    bottom: 5,
-                    left: 00,
-                    right: 00,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.black54,
-                        borderRadius: BorderRadius.circular(10),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const SizedBox(
+                        height: 10,
                       ),
-                      height: 75,
-                      width: double.infinity,
-                    ),
-                  ),
-                  Positioned(
-                    bottom: 20,
-                    left: 00,
-                    right: 00,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          meal.title,
-                          style: Theme.of(context).textTheme.titleLarge,
-                        ),
-                        Row(
-                          children: [
-                            const Spacer(),
-                            Icon(
-                              Icons.bento,
-                              color: meal.isLactoseFree
-                                  ? Colors.greenAccent
-                                  : Colors.redAccent,
-                            ),
-                            const Spacer(),
-                            Icon(
-                              Icons.smoke_free,
-                              color: meal.isGlutenFree
-                                  ? Colors.greenAccent
-                                  : Colors.redAccent,
-                            ),
-                            const Spacer(),
-                            Icon(
-                              Icons.bento,
-                              color: meal.isVegan
-                                  ? Colors.greenAccent
-                                  : Colors.redAccent,
-                            ),
-                            const Spacer(),
-                            Icon(
-                              Icons.smoke_free,
-                              color: meal.isVegetarian
-                                  ? Colors.greenAccent
-                                  : Colors.redAccent,
-                            ),
-                            const Spacer(),
-                            // Icon(icon),
-                          ],
-                        ),
-                      ],
-                    ),
+                      Text(
+                        meal.title,
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                      Row(
+                        children: [
+                          const Spacer(),
+                          Icon(
+                            Icons.bento,
+                            color: meal.isLactoseFree
+                                ? Colors.greenAccent
+                                : Colors.redAccent,
+                          ),
+                          const Spacer(),
+                          Icon(
+                            Icons.smoke_free,
+                            color: meal.isGlutenFree
+                                ? Colors.greenAccent
+                                : Colors.redAccent,
+                          ),
+                          const Spacer(),
+                          Icon(
+                            Icons.bento,
+                            color: meal.isVegan
+                                ? Colors.greenAccent
+                                : Colors.redAccent,
+                          ),
+                          const Spacer(),
+                          Icon(
+                            Icons.smoke_free,
+                            color: meal.isVegetarian
+                                ? Colors.greenAccent
+                                : Colors.redAccent,
+                          ),
+                          const Spacer(),
+                          // Icon(icon),
+                        ],
+                      ),
+                    ],
                   ),
                 ],
               ),
             ),
             const SizedBox(
               height: 5,
-            ),
-            Container(
-              padding: const EdgeInsets.fromLTRB(20, 5, 20, 20),
-              decoration: const BoxDecoration(
-                  //color: Color.fromARGB(182, 67, 96, 100),
-                  ),
-              child: Column(
-                children: [
-                  Text(
-                    meal.title,
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                  Row(
-                    children: [
-                      const Spacer(),
-                      Icon(
-                        Icons.bento,
-                        color: meal.isLactoseFree
-                            ? Colors.greenAccent
-                            : Colors.redAccent,
-                      ),
-                      const Spacer(),
-                      Icon(
-                        Icons.smoke_free,
-                        color: meal.isGlutenFree
-                            ? Colors.greenAccent
-                            : Colors.redAccent,
-                      ),
-                      const Spacer(),
-                      Icon(
-                        Icons.bento,
-                        color: meal.isVegan
-                            ? Colors.greenAccent
-                            : Colors.redAccent,
-                      ),
-                      const Spacer(),
-                      Icon(
-                        Icons.smoke_free,
-                        color: meal.isVegetarian
-                            ? Colors.greenAccent
-                            : Colors.redAccent,
-                      ),
-                      const Spacer(),
-                      // Icon(icon),
-                    ],
-                  ),
-                ],
-              ),
             ),
           ],
         ),
