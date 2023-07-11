@@ -1,16 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:meals/modal/meal.dart';
+//import 'package:food_icons/food_icons.dart';
 
 class Trait extends StatelessWidget {
-  const Trait({super.key, required this.meal});
+  const Trait({super.key, required this.icon, required this.text});
 
-  final Meal meal;
+  final IconData icon;
+  final String text;
 
   @override
   Widget build(context) {
-    return const Row(
+    return Row(
       children: [
-        Icon(),
+        Icon(
+          icon,
+          color: Colors.red,
+          size: 20,
+        ),
+        const SizedBox(
+          width: 6,
+        ),
         Text(''),
       ],
     );
