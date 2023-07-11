@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:meals/modal/meal.dart';
-//import 'package:food_icons/food_icons.dart';
 
 class Trait extends StatelessWidget {
   const Trait({super.key, required this.icon, required this.text});
@@ -14,7 +12,7 @@ class Trait extends StatelessWidget {
       children: [
         Icon(
           icon,
-          color: Colors.red,
+          color: Theme.of(context).colorScheme.primary,
           size: 20,
         ),
         const SizedBox(
@@ -24,7 +22,7 @@ class Trait extends StatelessWidget {
           text,
           style: const TextStyle(
             color: Colors.white,
-           ),
+          ),
         ),
       ],
     );
