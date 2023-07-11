@@ -20,7 +20,12 @@ class Trait extends StatelessWidget {
         const SizedBox(
           width: 6,
         ),
-        Text(''),
+        Text(
+          text,
+          style: const TextStyle(
+            color: Colors.white,
+           ),
+        ),
       ],
     );
   }
