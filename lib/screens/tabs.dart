@@ -44,18 +44,19 @@ class _TabsState extends State<Tabs> {
     });
   }
 
-  void onSelectScreen(String screen) {
+  void onSelectScreen(String screen) async {
     Navigator.of(context).pop();
     if (screen == "Meals") {
     } else if (screen == "Filtered") {
-       
-      Navigator.of(context).push(
+      final result = await Navigator.of(context).push<Map<Filter, bool>>(
         MaterialPageRoute(
           builder: (ctx) {
             return const FiltersScreen();
           },
         ),
       );
+
+      print(result);
     }
   }
 
