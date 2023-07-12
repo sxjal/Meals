@@ -43,6 +43,14 @@ class _TabsState extends State<Tabs> {
     });
   }
 
+  void onSelectScreen(String screen) {
+    if (screen == "Categories") {
+      _selectpage(0);
+    } else if (screen == "Favorites") {
+      _selectpage(1);
+    }
+  }
+
   @override
   Widget build(context) {
     Widget activestate =
@@ -57,7 +65,7 @@ class _TabsState extends State<Tabs> {
       appBar: AppBar(
         title: Text(activepagetitle),
       ),
-      drawer: const MainDrawer(),
+      drawer: MainDrawer(onSelectScreen: onSelectScreen),
       body: activestate,
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectpage,

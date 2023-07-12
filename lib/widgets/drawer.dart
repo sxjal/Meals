@@ -46,7 +46,7 @@ class MainDrawer extends StatelessWidget {
                   ),
             ),
             onTap: () {
-              Navigator.of(context).pushReplacementNamed('/');
+              onSelectScreen("Meals");
             },
           ),
           ListTile(
@@ -57,7 +57,9 @@ class MainDrawer extends StatelessWidget {
                     color: Colors.white,
                   ),
             ),
-            onTap: () {},
+            onTap: () {
+              onSelectScreen("Filtered");
+            },
           ),
         ],
       ),
