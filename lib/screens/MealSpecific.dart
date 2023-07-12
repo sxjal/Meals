@@ -9,7 +9,7 @@ class MealSpecific extends StatelessWidget {
   Widget build(context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Receipe"),
+        title: Text(meal.title),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -43,11 +43,14 @@ class MealSpecific extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       const SizedBox(
-                        height: 10,
+                        height: 20,
                       ),
                       Text(
                         meal.title,
                         style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                      const SizedBox(
+                        height: 10,
                       ),
                       Row(
                         children: [
@@ -79,9 +82,25 @@ class MealSpecific extends StatelessWidget {
                                 ? Colors.greenAccent
                                 : Colors.redAccent,
                           ),
-                          const Spacer(),
-                          // Icon(icon),
                         ],
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        "Ingredients",
+                        style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                              color: Colors.white,
+                            ),
+                      ),
+                      Text(
+                        meal.ingredients.toString(),
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium!
+                            .copyWith(
+                              color: const Color.fromARGB(255, 228, 225, 225),
+                            ),
                       ),
                     ],
                   ),
