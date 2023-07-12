@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meals/modal/meal.dart';
 import 'package:meals/screens/categories.dart';
 import 'package:meals/screens/mealscreen.dart';
 
@@ -20,6 +21,18 @@ class _TabsState extends State<Tabs> {
 
   @override
   Widget build(context) {
+    final List<Meal> favoriteMeals = [];
+
+    void togglemealfavstatus(Meal meal) {
+      final isexisting = favoriteMeals.contains(meal);
+
+      if (isexisting) {
+        favoriteMeals.remove(meal);
+      } else {
+        favoriteMeals.add(meal);
+      }
+    }
+
     Widget activestate = const CategoriesScreen();
     String activepagetitle = "Categories";
     if (_selectedpageindex == 1) {
