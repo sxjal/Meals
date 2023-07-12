@@ -9,27 +9,33 @@ class FiltersScreen extends StatefulWidget {
 
 class _FiltersScreenState extends State<FiltersScreen> {
   @override
-  bool currvalue = false;
+  var _glutenfreeset = false;
+
   Widget build(context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Your Filters"),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SwitchListTile(
-            value: currvalue,
-            onChanged: (value) {
+            value: _glutenfreeset,
+            onChanged: (newvalue) {
               setState(() {
-                currvalue = !value;
+                _glutenfreeset = newvalue;
               });
             },
             title: Text(
               "Gluten-Free",
               style: Theme.of(context).textTheme.bodyMedium,
             ),
+            subtitle: Text(
+              "Only include gluten-free meals.",
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+            activeColor: Theme.of(context).colorScheme.primary,
           ),
         ],
       ),
