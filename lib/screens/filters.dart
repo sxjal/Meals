@@ -8,9 +8,9 @@ class FiltersScreen extends StatefulWidget {
 }
 
 class _FiltersScreenState extends State<FiltersScreen> {
-  @override
   var _glutenfreeset = false;
 
+  @override
   Widget build(context) {
     return Scaffold(
       appBar: AppBar(
