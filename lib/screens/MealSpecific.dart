@@ -106,6 +106,33 @@ class MealSpecific extends StatelessWidget {
                       const SizedBox(
                         height: 20,
                       ),
+                      Text(
+                        "Steps",
+                        style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                              color: Colors.white,
+                            ),
+                      ),
+                      for (final steps in meal.steps)
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 12,
+                            vertical: 16,
+                          ),
+                          child: Text(
+                            steps.toString(),
+                            textAlign: TextAlign.left,
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium!
+                                .copyWith(
+                                  color:
+                                      const Color.fromARGB(255, 228, 225, 225),
+                                ),
+                          ),
+                        ),
+                      const SizedBox(
+                        height: 20,
+                      ),
                     ],
                   ),
                 ],
