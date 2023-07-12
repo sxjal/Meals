@@ -20,13 +20,24 @@ class _TabsState extends State<Tabs> {
     });
   }
 
+  void showinfomessage(String message) {
+    ScaffoldMessenger.of(context).clearSnackBars();
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+      ),
+    );
+  }
+
   void _togglemealfavstatus(Meal meal) {
     final isexisting = favoriteMeals.contains(meal);
     setState(() {
       if (isexisting) {
         favoriteMeals.remove(meal);
+        showinfomessage("Removed from favorites!");
       } else {
         favoriteMeals.add(meal);
+        showinfomessage("Added to favorites!");
       }
     });
   }
