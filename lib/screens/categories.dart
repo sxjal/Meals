@@ -24,37 +24,32 @@ class CategoriesScreen extends StatelessWidget {
 
   @override
   Widget build(context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Hi there!"),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: GridView(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: 3 / 2,
-            crossAxisSpacing: 20,
-            mainAxisSpacing: 20,
-          ),
-          children: [
-            // ...avaialbleCategories.map((category) {
-            //   return GridData(
-            //     category: category,
-            //     selectCategory: () {
-            //       selectCategory(context);
-            //     },
-            //   );
-            // }).toList(),
-            for (final category in avaialbleCategories)
-              GridData(
-                category: category,
-                onSelectCategory: () {
-                  _selectCategory(context, category);
-                },
-              ),
-          ],
+    return Padding(
+      padding: const EdgeInsets.all(20),
+      child: GridView(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 3 / 2,
+          crossAxisSpacing: 20,
+          mainAxisSpacing: 20,
         ),
+        children: [
+          // ...avaialbleCategories.map((category) {
+          //   return GridData(
+          //     category: category,
+          //     selectCategory: () {
+          //       selectCategory(context);
+          //     },
+          //   );
+          // }).toList(),
+          for (final category in avaialbleCategories)
+            GridData(
+              category: category,
+              onSelectCategory: () {
+                _selectCategory(context, category);
+              },
+            ),
+        ],
       ),
     );
   }
