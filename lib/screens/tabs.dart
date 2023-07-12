@@ -12,6 +12,7 @@ class Tabs extends StatefulWidget {
 
 class _TabsState extends State<Tabs> {
   int _selectedpageindex = 0;
+  final List<Meal> favoriteMeals = [];
 
   void _selectpage(int index) {
     setState(() {
@@ -19,26 +20,25 @@ class _TabsState extends State<Tabs> {
     });
   }
 
-  @override
-  Widget build(context) {
-    final List<Meal> favoriteMeals = [];
-
-    void _togglemealfavstatus(Meal meal) {
-      final isexisting = favoriteMeals.contains(meal);
-
+  void _togglemealfavstatus(Meal meal) {
+    final isexisting = favoriteMeals.contains(meal);
+    setState(() {
       if (isexisting) {
         favoriteMeals.remove(meal);
       } else {
         favoriteMeals.add(meal);
       }
-    }
+    });
+  }
 
+  @override
+  Widget build(context) {
     Widget activestate =
         CategoriesScreen(ontogglefavorite: _togglemealfavstatus);
     String activepagetitle = "Categories";
     if (_selectedpageindex == 1) {
-      activestate =
-          MealScreen(meals: [], togglemealfavstatus: _togglemealfavstatus);
+      activestate = MealScreen(
+          meals: favoriteMeals, togglemealfavstatus: _togglemealfavstatus);
       activepagetitle = "Favorites";
     }
     return Scaffold(
