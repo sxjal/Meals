@@ -33,7 +33,8 @@ class _TabsState extends State<Tabs> {
       }
     }
 
-    Widget activestate = const CategoriesScreen();
+    Widget activestate =
+        CategoriesScreen(ontogglefavorite: _togglemealfavstatus);
     String activepagetitle = "Categories";
     if (_selectedpageindex == 1) {
       activestate =
