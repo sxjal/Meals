@@ -5,11 +5,11 @@ import 'package:meals/widgets/meal_item.dart';
 class MealScreen extends StatelessWidget {
   const MealScreen({
     super.key,
-    required this.title,
+    this.title,
     required this.meals,
   });
 
-  final String title;
+  final String? title;
   final List<Meal> meals;
 
   @override
@@ -26,13 +26,17 @@ class MealScreen extends StatelessWidget {
       );
     }
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: Center(
-        child: screen,
-      ),
-    );
+    if (title == null) {
+      return screen;
+    }  else {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text(title!),
+        ),
+        body: Center(
+          child: screen,
+        ),
+      );
+    }
   }
 }

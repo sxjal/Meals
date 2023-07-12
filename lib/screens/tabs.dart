@@ -23,7 +23,7 @@ class _TabsState extends State<Tabs> {
     Widget activestate = const CategoriesScreen();
     String activepagetitle = "Categories";
     if (_selectedpageindex == 1) {
-      activestate = const MealScreen(title: "Favorites", meals: []);
+      activestate = const MealScreen(meals: []);
       activepagetitle = "Favorites";
     }
     return Scaffold(
