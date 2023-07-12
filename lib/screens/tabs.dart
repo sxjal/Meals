@@ -44,9 +44,9 @@ class _TabsState extends State<Tabs> {
   }
 
   void onSelectScreen(String screen) {
-    if (screen == "Categories") {
-      _selectpage(0);
-    } else if (screen == "Favorites") {
+    Navigator.of(context).pop();
+    if (screen == "Meals") {
+    } else if (screen == "Filtered") {
       _selectpage(1);
     }
   }
