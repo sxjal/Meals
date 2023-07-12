@@ -1,10 +1,14 @@
+// ignore_for_file: file_names
+
 import 'package:meals/modal/meal.dart';
 import 'package:flutter/material.dart';
 
 class MealSpecific extends StatelessWidget {
-  const MealSpecific({super.key, required this.meal});
+  const MealSpecific(
+      {super.key, required this.meal, required this.ontogglefavorite});
 
   final Meal meal;
+  final void Function(Meal) ontogglefavorite;
   @override
   Widget build(context) {
     return Scaffold(
@@ -12,7 +16,9 @@ class MealSpecific extends StatelessWidget {
         title: Text(meal.title),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              ontogglefavorite(meal);
+            },
             icon: const Icon(Icons.star),
           ),
         ],

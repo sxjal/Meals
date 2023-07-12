@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:meals/modal/meal.dart';
-import 'package:meals/screens/MealSpecific.dart';
+import 'package:meals/screens/mealspecific.dart';
 import 'package:meals/widgets/meal_item_trait.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class MealItem extends StatelessWidget {
-  const MealItem({super.key, required this.meal});
+  const MealItem(
+      {super.key, required this.meal, required this.ontogglefavorite});
   final Meal meal;
+  final void Function(Meal) ontogglefavorite;
 
   String get complexitytext {
     return meal.complexity.name[0].toUpperCase() +
@@ -34,7 +36,10 @@ class MealItem extends StatelessWidget {
         onTap: () {
           // print("printed");
           Navigator.of(context).push(MaterialPageRoute(builder: (ctx) {
-            return MealSpecific(meal: meal);
+            return MealSpecific(
+              meal: meal,
+              ontogglefavorite: ontogglefavorite,
+            );
           }));
         },
         child: Stack(

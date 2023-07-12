@@ -23,7 +23,7 @@ class _TabsState extends State<Tabs> {
   Widget build(context) {
     final List<Meal> favoriteMeals = [];
 
-    void togglemealfavstatus(Meal meal) {
+    void _togglemealfavstatus(Meal meal) {
       final isexisting = favoriteMeals.contains(meal);
 
       if (isexisting) {
@@ -36,7 +36,8 @@ class _TabsState extends State<Tabs> {
     Widget activestate = const CategoriesScreen();
     String activepagetitle = "Categories";
     if (_selectedpageindex == 1) {
-      activestate = const MealScreen(meals: []);
+      activestate =
+          MealScreen(meals: [], togglemealfavstatus: _togglemealfavstatus);
       activepagetitle = "Favorites";
     }
     return Scaffold(

@@ -7,11 +7,12 @@ class MealScreen extends StatelessWidget {
     super.key,
     this.title,
     required this.meals,
+    required this.togglemealfavstatus,
   });
 
   final String? title;
   final List<Meal> meals;
-
+  final void Function(Meal) togglemealfavstatus;
   @override
   Widget build(context) {
     Widget screen;
@@ -21,14 +22,15 @@ class MealScreen extends StatelessWidget {
       );
     } else {
       screen = ListView.builder(
-        itemBuilder: (ctx, index) => MealItem(meal: meals[index]),
+        itemBuilder: (ctx, index) =>
+            MealItem(meal: meals[index], ontogglefavorite: togglemealfavstatus),
         itemCount: meals.length,
       );
     }
 
     if (title == null) {
       return screen;
-    }  else {
+    } else {
       return Scaffold(
         appBar: AppBar(
           title: Text(title!),
