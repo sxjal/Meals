@@ -60,7 +60,9 @@ class _TabsState extends State<Tabs> {
       final result = await Navigator.of(context).push<Map<Filter, bool>>(
         MaterialPageRoute(
           builder: (ctx) {
-            return const FiltersScreen();
+            return FiltersScreen(
+              currentfilters: _filters,
+            );
           },
         ),
       );
