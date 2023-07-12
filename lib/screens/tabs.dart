@@ -21,18 +21,19 @@ class _TabsState extends State<Tabs> {
   @override
   Widget build(context) {
     Widget activestate = const CategoriesScreen();
-    var activepagetitle = "Categories";
+    String activepagetitle = "Categories";
     if (_selectedpageindex == 1) {
       activestate = const MealScreen(title: "Favorites", meals: []);
       activepagetitle = "Favorites";
     }
     return Scaffold(
       appBar: AppBar(
-        title: Text("sajal"),
+        title: Text(activepagetitle),
       ),
       body: activestate,
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectpage,
+        currentIndex: _selectedpageindex,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(
