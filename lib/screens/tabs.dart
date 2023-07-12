@@ -46,10 +46,9 @@ class _TabsState extends State<Tabs> {
 
   void onSelectScreen(String screen) {
     Navigator.of(context).pop();
-
     if (screen == "Meals") {
     } else if (screen == "Filtered") {
-      //_selectpage(1);
+       
       Navigator.of(context).push(
         MaterialPageRoute(
           builder: (ctx) {
