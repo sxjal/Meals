@@ -93,14 +93,18 @@ class MealSpecific extends StatelessWidget {
                               color: Colors.white,
                             ),
                       ),
-                      Text(
-                        meal.ingredients.toString(),
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleMedium!
-                            .copyWith(
-                              color: const Color.fromARGB(255, 228, 225, 225),
-                            ),
+                      for (final ingredient in meal.ingredients)
+                        Text(
+                          ingredient.toString(),
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleMedium!
+                              .copyWith(
+                                color: const Color.fromARGB(255, 228, 225, 225),
+                              ),
+                        ),
+                      const SizedBox(
+                        height: 20,
                       ),
                     ],
                   ),
